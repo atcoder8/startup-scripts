@@ -12,8 +12,9 @@ alias ojs='oj submit --yes'
 
 alias latest_python_version='pyenv install --list | grep -E "^\s*3\.[0-9]+\.[0-9]+\s*$" | sed "s/\s//g" | sort -V | tail -n 1'
 
-alias update="$HOME/scripts/update.sh"
-
 alias clip='copyq copy - >/dev/null'
 
 alias snippet='create-snippet'
+
+alias py="$HOME/.venv/bin/python3"
+alias pi="$HOME/.venv/bin/pip3"
