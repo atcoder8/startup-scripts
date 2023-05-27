@@ -1,7 +1,7 @@
 alias compete='cargo compete'
 alias c='compete'
 
-alias assist_tools="$HOME/assist_tools/.venv/bin/python3 $HOME/assist_tools/assist_tools.py"
+alias assist_tools="$HOME/.venv/bin/python3 $HOME/assist_tools/assist_tools.py"
 alias a='assist_tools'
 
 alias g='g++ -std=gnu++17 -Wall -Wextra -O2 -DONLINE_JUDGE -I/home/cycle/lib/ac-library -I/home/cycle/lib/boost_1_72_0'
