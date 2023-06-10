@@ -4,7 +4,7 @@ alias c='compete'
 alias assist_tools="$HOME/.venv/bin/python3 $HOME/assist_tools/assist_tools.py"
 alias a='assist_tools'
 
-alias g='g++ -std=gnu++17 -Wall -Wextra -O2 -DONLINE_JUDGE -I/home/cycle/lib/ac-library -I/home/cycle/lib/boost_1_72_0'
+alias g='g++ -std=gnu++17 -Wall -Wextra -O2 -DONLINE_JUDGE -I/home/cycle/ac-library -I/home/cycle/boost'
 
 alias ojd='if [ -d test ]; then rm -r test; fi && oj download'
 alias ojt='oj test -m ignore-spaces'
