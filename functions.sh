@@ -34,7 +34,7 @@ function ac_new() {
         return 1
     fi
 
-    cd $HOME/atcoder
+    cd $HOME/contests/atcoder
     ./new.sh $1
     cd $1
 }
