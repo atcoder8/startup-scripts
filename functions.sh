@@ -17,14 +17,14 @@ function update() {
 
     # Upgrade pyenv.
     if [ -v PYENV_ROOT ]; then
-    echo -e "\n# Execute \`git -C ${PYENV_ROOT} pull\`."
-    git -C ${PYENV_ROOT} pull
+        echo -e "\n# Execute \`git -C ${PYENV_ROOT} pull\`."
+        git -C ${PYENV_ROOT} pull
     fi
 
     # Update Rust toolchains and rustup.
     if [ -d "$HOME/.rustup" ]; then
-    echo -e "\n# Execute \`rustup update\`."
-    rustup update
+        echo -e "\n# Execute \`rustup update\`."
+        rustup update
     fi
 }
 
