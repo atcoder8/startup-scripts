@@ -19,6 +19,9 @@ function update() {
     if [ -v PYENV_ROOT ]; then
         echo -e "\n# Execute \`git -C ${PYENV_ROOT} pull\`."
         git -C ${PYENV_ROOT} pull
+
+        echo -e "\n# Latest Python version provided by \`pyenv\`: \
+$(pyenv install --list | grep -E "^\s*3\.[0-9]+\.[0-9]+\s*$" | sed "s/\s//g" | sort -V | tail -n 1)"
     fi
 
     # Update Rust toolchains and rustup.
