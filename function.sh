@@ -1,7 +1,7 @@
 function update() {
     echo "# Execute automatic upgrades."
 
-    # Upgrade apt packages.
+    # Updates apt packages.
     echo -e "\n# Execute \`sudo apt update\`."
     sudo apt update
     echo -e "\n# Execute \`sudo apt -y upgrade\`."
@@ -15,7 +15,7 @@ function update() {
     echo -e "\n# Execute \`sudo apt autopurge\`."
     sudo apt autopurge
 
-    # Upgrade pyenv.
+    # Updates pyenv.
     if [ -v PYENV_ROOT ]; then
         echo -e "\n# Execute \`git -C ${PYENV_ROOT} pull\`."
         git -C ${PYENV_ROOT} pull
@@ -24,10 +24,16 @@ function update() {
 $(pyenv install --list | grep -E "^\s*3\.[0-9]+\.[0-9]+\s*$" | sed "s/\s//g" | sort -V | tail -n 1)"
     fi
 
-    # Update Rust toolchains and rustup.
+    # Updates Rust toolchains and rustup.
     if [ -d "$HOME/.rustup" ]; then
         echo -e "\n# Execute \`rustup update\`."
         rustup update
+    fi
+
+    # Updates packages for the venv environment in the home directory.
+    if [ -f "$HOME/.venv/bin/pip3" -a -f "$HOME/requirements.txt" ]; then
+        echo -e "\n# Execute \`$HOME/.venv/bin/pip3 install -Ur $HOME/requirements.txt\`"
+        $HOME/.venv/bin/pip3 install -Ur $HOME/requirements.txt
     fi
 }
 
