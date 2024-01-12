@@ -37,14 +37,23 @@ $(pyenv install --list | grep -E "^\s*3\.[0-9]+\.[0-9]+\s*$" | sed "s/\s//g" | s
     fi
 }
 
-function ac_new() {
-    if [ $# -ne 1 ]; then
-        echo "Usage: ac_new <CONTEST NAME>"
+function new_contest() {
+    if [ $# -eq 1 -a $# -eq 2 ]; then
+        echo "Usage: new_contest <CONTEST NAME> [SETUP FILE]"
         return 1
     fi
 
-    cd $HOME/contests/atcoder
-    ./new.sh $1
+    setup_file="new.sh"
+
+    if [ $# -eq 2 ]; then
+        setup_file=$2
+    fi
+
+    if [ ! -f $setup_file ]; then
+        echo "Not found \`$setup_file\`" >&2
+    fi
+
+    ./$setup_file $1
     cd $1
 }
 
