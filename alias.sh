@@ -12,7 +12,7 @@ alias ojs='oj submit --yes'
 
 alias latest_python_version='pyenv install --list | grep -E "^\s*3\.[0-9]+\.[0-9]+\s*$" | sed "s/\s//g" | sort -V | tail -n 1'
 
-alias clip='copyq add - >/dev/null'
+alias clip='xclip -selection clipboard'
 
 alias snippet='create-snippet'
 
