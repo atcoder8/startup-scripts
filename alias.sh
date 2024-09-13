@@ -1,5 +1,5 @@
 alias compete='cargo compete'
-alias c='compete'
+alias c='cargo compete'
 
 alias assist_tools="$HOME/.venv/bin/python3 $HOME/app/assist_tools/assist_tools.py"
 alias a='assist_tools'
